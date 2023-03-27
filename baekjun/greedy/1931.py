@@ -1,5 +1,19 @@
-import os, sys
+N = int(input())
 
-with open(os.path.join(sys.path[0], "input.txt"), 'r') as f:
-    N = int, f.readline()
-    arr = [int(f.readline()) for _ in range(N)]
+points = []
+for i in range(N):
+    x, y = map(int, input().split())
+    points.append((x, y))
+    
+points.sort(key=lambda x: (x[1], x[0]))
+
+count = 0
+last = 0
+for point in points:
+    if point[0] >= last:
+        count += 1
+        last = point[1]
+        
+print(count)
+   
+    
