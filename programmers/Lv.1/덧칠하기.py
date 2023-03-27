@@ -4,10 +4,6 @@ section=[2, 3, 6]
 
 def solution(n, m, section):
     answer = 0
-    diff = section[-1] - section[0]
-    if diff < m:
-        return 1
-    
     while len(section) > 0:
         first = section[0]
         while len(section) > 0 and section[0] - first < m:
